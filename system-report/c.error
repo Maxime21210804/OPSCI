@@ -1,0 +1,4 @@
+./report.sh: 12: kill: No such process
+
+./report.sh: ligne 22 : kill: (148873) - Aucun processus de ce type
+/users/Etu4/21210804/system-report/report.sh: ligne 22 : kill: (148873) - Aucun processus de ce type

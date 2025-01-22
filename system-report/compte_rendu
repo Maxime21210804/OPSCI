@@ -1,0 +1,274 @@
+Q1 : df -h affiche la taille du disque
+ Sys. de fichiers                             Taille Utilisé Dispo Uti% Monté sur
+udev                                            16G       0   16G   0% /dev
+tmpfs                                          3,2G    1,9M  3,2G   1% /run
+/dev/sda3                                      1,8T    364G  1,3T  22% /
+tmpfs                                           16G    128K   16G   1% /dev/shm
+tmpfs                                          5,0M     12K  5,0M   1% /run/lock
+/dev/loop3                                     192M    192M     0 100% /snap/postman/233
+/dev/loop2                                      56M     56M     0 100% /snap/core18/2846
+/dev/loop5                                      45M     45M     0 100% /snap/snapd/23258
+/dev/loop0                                      56M     56M     0 100% /snap/core18/2829
+/dev/loop1                                     189M    189M     0 100% /snap/postman/206
+tmpfs                                           16G    4,0K   16G   1% /tmp
+/dev/sda1                                      476M    5,9M  470M   2% /boot/efi
+fs-etu9.ufr-info-p6.jussieu.fr:/dsk/Etu9/o     2,0T    637G  1,3T  34% /users/nfs/Etu9
+/dev/loop6                                      45M     45M     0 100% /snap/snapd/23545
+fs-etu0.ufr-info-p6.jussieu.fr:/dsk/Etu0/o     2,0T    541G  1,4T  29% /users/nfs/Etu0
+fs-infos.ufr-info-p6.jussieu.fr:/dsk/Infos/o   2,0T    162G  1,7T   9% /users/nfs/Infos
+fs-etu4.ufr-info-p6.jussieu.fr:/dsk/Etu4/o     2,0T    573G  1,3T  31% /users/nfs/Etu4
+
+cat /proc/meminfo MemTotal : 32596892 kB donc 32 GB.
+MemTotal:       32596892 kB
+MemFree:        19299304 kB
+MemAvailable:   28902316 kB
+Buffers:         2295344 kB
+Cached:          4274652 kB
+SwapCached:            0 kB
+Active:          4584052 kB
+Inactive:        4407044 kB
+Active(anon):       4568 kB
+Inactive(anon):  2492488 kB
+Active(file):    4579484 kB
+Inactive(file):  1914556 kB
+Unevictable:       11916 kB
+Mlocked:            7844 kB
+SwapTotal:      62499836 kB
+SwapFree:       62499836 kB
+Zswap:                 0 kB
+Zswapped:              0 kB
+Dirty:                72 kB
+Writeback:             0 kB
+AnonPages:       2354760 kB
+Mapped:           882912 kB
+Shmem:             70688 kB
+KReclaimable:    3578324 kB
+Slab:            3871892 kB
+SReclaimable:    3578324 kB
+SUnreclaim:       293568 kB
+KernelStack:       17680 kB
+PageTables:        30464 kB
+SecPageTables:         0 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    78798280 kB
+Committed_AS:    9394764 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:       94344 kB
+VmallocChunk:          0 kB
+Percpu:            12864 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:    929792 kB
+ShmemHugePages:     2048 kB
+ShmemPmdMapped:        0 kB
+FileHugePages:         0 kB
+FilePmdMapped:         0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+Hugetlb:               0 kB
+DirectMap4k:     1465804 kB
+DirectMap2M:    21334016 kB
+DirectMap1G:    11534336 kB
+
+cat /proc/cpuinfo donne les informations des 16 threads de notre CPU; cpu cores : 8 ; Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz
+
+lspci |grep VGA 01:00.0 VGA compatible controller: NVIDIA Corporation GA102 [GeForce RTX 3080]
+
+Q2: cd ~ ; ls -al : Affiche les répertoires racines de notre session uniquement
+cd ~ & ls -al : Affiche les répertoires racines de toutes les sessions stockés dans ce pc
+cd ~ && ls -al : Même résultat que cd ~ ; ls -al mais avec && la 2e commande s'éxecute uniquement si la première réussit .
+
+# du -hs :  1,1G .
+
+# du -h --max-depth=1
+420K	./k06
+84K	./repertoire
+38M	./git
+4,0K	./Musique
+37M	./.mozilla
+76K	./.pki
+4,0K	./Modèles
+8,0K	./.conda
+16K	./.p2
+80K	./LU3IN029
+4,0K	./Bureau
+4,0K	./.ssh
+552K	./.java
+12K	./TMESOLO_maxime
+4,0K	./LU3IN012
+8,1M	./.eclipse
+79M	./eclipse-workspace
+12K	./LU3IN033
+3,8M	./Téléchargements
+19M	./MARS
+4,0K	./Documents
+4,0K	./Images
+109M	./.config
+8,0K	./.oracle_jre_usage
+8,0K	./.swt
+4,0K	./Public
+8,0K	./.nv
+621M	./.cache
+47M	./.local
+12K	./.gnupg
+20K	./.vscode
+4,0K	./.r
+72K	./.rstudio-desktop
+4,0K	./Vidéos
+28K	./.dbus
+39M	./Domination
+1,1G	.
+# quota : affiche mon quota
+Disk quotas for user 21210804 (uid 21210804): 
+Système fichiers   blocs   quota  limite  sursisfichiers   quota  limite  sursis
+fs-etu4.ufr-info-p6.jussieu.fr:/dsk/Etu4/o
+                1060136  1400000 1540000           14234       0       0    
+# find ~/ workspace -name .\.java | wc -l
+find: ‘workspace’: Aucun fichier ou dossier de ce type
+0
+
+Exercice 3 :
+sh
+ps -aux | grep ^`whoami` : affiche tous les processus en cours 
+21210804  136791  0.0  0.0 240096 10168 ?        Sl   16:07   0:00 /usr/bin/gnome-keyring-daemon --daemonize --login
+21210804  136794  0.0  0.0 519488 20152 ?        Ssl  16:07   0:00 /usr/libexec/gnome-session-binary
+21210804  136808  0.0  0.0   7896  2224 ?        S    16:07   0:00 dbus-launch --autolaunch a80ae35020e341d08b846b2fcd2e06ee --binary-syntax --close-stderr
+21210804  136809  0.0  0.0   5912  2220 ?        Ss   16:07   0:00 /usr/bin/dbus-daemon --syslog-only --fork --print-pid 5 --print-address 7 --session
+21210804  136869  0.0  0.0   7896  2100 ?        S    16:07   0:00 /usr/bin/dbus-launch --exit-with-session --sh-syntax
+21210804  136870  0.0  0.0   7400  3952 ?        Ss   16:07   0:01 /usr/bin/dbus-daemon --syslog --fork --print-pid 5 --print-address 7 --session
+21210804  136885  0.0  0.0   9512   808 ?        Ss   16:07   0:00 /usr/bin/ssh-agent /usr/bin/im-launch /usr/bin/gnome-session
+21210804  136907  0.0  0.0 308796  7208 ?        Sl   16:07   0:00 /usr/libexec/at-spi-bus-launcher
+21210804  136912  0.0  0.0   6176  3932 ?        S    16:07   0:00 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 11 --address=unix:path=/users/Etu4/21210804/.cache/at-spi/bus_0
+21210804  136934  4.4  1.2 5230892 414896 ?      Sl   16:07   1:43 /usr/bin/gnome-shell
+21210804  136944  0.0  0.0 237732 10272 ?        Sl   16:07   0:00 /usr/libexec/gvfsd
+21210804  136975  0.0  0.0 235068 10932 ?        Sl   16:07   0:00 /usr/libexec/xdg-permission-store
+21210804  136977  0.0  0.0 581108 21520 ?        Sl   16:07   0:00 /usr/libexec/gnome-shell-calendar-server
+21210804  136987  0.0  0.1 543520 49428 ?        Sl   16:07   0:00 /usr/libexec/evolution-source-registry
+21210804  136998  0.0  0.1 606228 42264 ?        Sl   16:07   0:00 /usr/libexec/goa-daemon
+21210804  137020  0.0  0.0 312788 11100 ?        Sl   16:07   0:00 /usr/libexec/goa-identity-service
+21210804  137028  0.0  0.0 815936 28644 ?        Sl   16:07   0:00 /usr/libexec/evolution-calendar-factory
+21210804  137038  0.0  0.1 703928 35332 ?        Sl   16:07   0:00 /usr/libexec/evolution-addressbook-factory
+21210804  137075  0.0  0.0 156604  7840 ?        Sl   16:07   0:00 /usr/libexec/dconf-service
+21210804  137091  0.0  0.0 351676 13612 ?        Sl   16:07   0:00 /usr/libexec/gvfs-udisks2-volume-monitor
+21210804  137097  0.0  0.0 233700  8744 ?        Sl   16:07   0:00 /usr/libexec/gvfs-mtp-volume-monitor
+21210804  137102  0.0  0.0 234792  9172 ?        Sl   16:07   0:00 /usr/libexec/gvfs-gphoto2-volume-monitor
+21210804  137107  0.0  0.0 233776 10624 ?        Sl   16:07   0:00 /usr/libexec/gvfs-goa-volume-monitor
+21210804  137112  0.0  0.0 314732 10496 ?        Sl   16:07   0:00 /usr/libexec/gvfs-afc-volume-monitor
+21210804  137121  0.0  0.0 2850504 31348 ?       Sl   16:07   0:00 /usr/bin/gjs /usr/share/gnome-shell/org.gnome.Shell.Notifications
+21210804  137123  0.0  0.0 161996  9004 ?        Sl   16:07   0:01 /usr/libexec/at-spi2-registryd --use-gnome-session
+21210804  137145  0.0  0.0 382600 11516 ?        Sl   16:07   0:00 /usr/libexec/gsd-usb-protection
+21210804  137149  0.0  0.0 518556 31924 ?        Sl   16:07   0:00 /usr/libexec/gsd-media-keys
+21210804  137151  0.6  0.0 387480 17540 ?        Sl   16:07   0:14 ibus-daemon --panel disable --xim
+21210804  137153  0.0  0.0 455040 10264 ?        Sl   16:07   0:00 /usr/libexec/gsd-rfkill
+21210804  137159  0.0  0.0 307664 11104 ?        Sl   16:07   0:00 /usr/libexec/gsd-a11y-settings
+21210804  137166  0.0  0.0 262648 25052 ?        Sl   16:07   0:00 /usr/libexec/gsd-wacom
+21210804  137171  0.0  0.0 448004 30328 ?        Sl   16:07   0:00 /usr/libexec/gsd-power
+21210804  137176  0.0  0.0 233444  8508 ?        Sl   16:07   0:00 /usr/libexec/gsd-screensaver-proxy
+21210804  137179  0.0  0.0 337248 27824 ?        Sl   16:07   0:00 /usr/libexec/gsd-color
+21210804  137182  0.0  0.0 414308 30188 ?        Sl   16:07   0:00 /usr/libexec/gsd-xsettings
+21210804  137193  0.0  0.0 245520 13308 ?        Sl   16:07   0:00 /usr/libexec/gsd-print-notifications
+21210804  137196  0.0  0.0 463716 14804 ?        Sl   16:07   0:00 /usr/libexec/gsd-sharing
+21210804  137199  0.0  0.0 353388 15664 ?        Sl   16:07   0:00 /usr/libexec/gsd-datetime
+21210804  137202  0.0  0.0 313652 11024 ?        Sl   16:07   0:00 /usr/libexec/gsd-wwan
+21210804  137205  0.0  0.0 312292 12720 ?        Sl   16:07   0:00 /usr/libexec/gsd-smartcard
+21210804  137210  0.0  0.0 383092 11948 ?        Sl   16:07   0:00 /usr/libexec/gsd-housekeeping
+21210804  137219  0.0  0.0 317336 11300 ?        Sl   16:07   0:00 /usr/libexec/gsd-sound
+21210804  137226  0.0  0.0 335896 25116 ?        Sl   16:07   0:00 /usr/libexec/gsd-keyboard
+21210804  137247  0.0  0.0 2785012 31480 ?       Sl   16:07   0:00 /usr/bin/gjs /usr/share/gnome-shell/org.gnome.ScreenSaver
+21210804  137303  0.0  0.0 339688 15740 ?        Sl   16:07   0:00 /usr/libexec/gsd-printer
+21210804  137307  0.0  0.0 231812  8272 ?        Sl   16:07   0:00 /usr/libexec/gsd-disk-utility-notify
+21210804  137309  0.0  0.1 630076 37700 ?        SNl  16:07   0:01 /usr/libexec/tracker-miner-fs-3
+21210804  137312  0.4  0.6 971880 222276 ?       Sl   16:07   0:10 /usr/bin/gnome-software --gapplication-service
+21210804  137318  0.0  0.2 514936 65764 ?        Sl   16:07   0:01 /usr/lib/x86_64-linux-gnu/libexec/kdeconnectd
+21210804  137319  0.0  0.2 939952 80472 ?        Sl   16:07   0:00 /usr/libexec/evolution-data-server/evolution-alarm-notify
+21210804  137378  0.0  0.0 234428 11416 ?        Sl   16:07   0:00 /usr/libexec/ibus-memconf
+21210804  137380  0.1  0.1 341804 32612 ?        Sl   16:07   0:04 /usr/libexec/ibus-extension-gtk3
+21210804  137384  0.0  0.0 262284 25128 ?        Sl   16:07   0:00 /usr/libexec/ibus-x11 --kill-daemon
+21210804  137388  0.0  0.0 234376  9480 ?        Sl   16:07   0:00 /usr/libexec/ibus-portal
+21210804  137454  0.0  0.0 536408 18924 ?        Sl   16:07   0:00 /usr/libexec/xdg-desktop-portal
+21210804  137471  0.0  0.1 628100 61192 ?        Sl   16:07   0:02 /usr/libexec/xdg-desktop-portal-gnome
+21210804  137576  0.0  0.0 414068 31276 ?        Sl   16:07   0:00 /usr/libexec/xdg-desktop-portal-gtk
+21210804  137635  0.0  0.0 160464  9032 ?        Sl   16:07   0:00 /usr/libexec/gvfsd-metadata
+21210804  137773  0.1  0.0 234568  9504 ?        Sl   16:07   0:04 /usr/libexec/ibus-engine-simple
+21210804  137806  3.4  2.1 3479764 689132 ?      Sl   16:07   1:18 /usr/lib/firefox-esr/firefox-esr
+21210804  137908  0.0  0.1 221444 36372 ?        Sl   16:07   0:00 /usr/lib/firefox-esr/firefox-esr -contentproc -parentBuildID 20241118130310 -prefsLen 29128 -prefMapSize 249223 -appDir /usr/lib/firefox-esr/browser {964f2a78-0495-4666-a78c-90135e6acd92} 137806 true socket
+21210804  137932  0.0  0.3 2464296 104600 ?      Sl   16:07   0:01 /usr/lib/firefox-esr/firefox-esr -contentproc -childID 1 -isForBrowser -prefsLen 29185 -prefMapSize 249223 -jsInitLen 234780 -parentBuildID 20241118130310 -greomni /usr/lib/firefox-esr/omni.ja -appomni /usr/lib/firefox-esr/browser/omni.ja -appDir /usr/lib/firefox-esr/browser {288fd42c-2205-49d8-94b6-82667ed047e9} 137806 true tab
+21210804  137963  0.3  0.4 2506440 143420 ?      Sl   16:07   0:08 /usr/lib/firefox-esr/firefox-esr -contentproc -childID 2 -isForBrowser -prefsLen 30210 -prefMapSize 249223 -jsInitLen 234780 -parentBuildID 20241118130310 -greomni /usr/lib/firefox-esr/omni.ja -appomni /usr/lib/firefox-esr/browser/omni.ja -appDir /usr/lib/firefox-esr/browser {67feef1f-a9a5-4c1f-aae6-29155bda70f5} 137806 true tab
+21210804  138058  0.0  0.1 220460 36052 ?        Sl   16:07   0:00 /usr/lib/firefox-esr/firefox-esr -contentproc -parentBuildID 20241118130310 -sandboxingKind 0 -prefsLen 34985 -prefMapSize 249223 -appDir /usr/lib/firefox-esr/browser {4adacb46-dd19-4f33-9626-e122068488e8} 137806 true utility
+21210804  138085  0.1  0.5 2667680 173168 ?      Sl   16:07   0:03 /usr/lib/firefox-esr/firefox-esr -contentproc -childID 5 -isForBrowser -prefsLen 31730 -prefMapSize 249223 -jsInitLen 234780 -parentBuildID 20241118130310 -greomni /usr/lib/firefox-esr/omni.ja -appomni /usr/lib/firefox-esr/browser/omni.ja -appDir /usr/lib/firefox-esr/browser {acbbc9d3-6f9b-4fcb-8967-1567d379889b} 137806 true tab
+21210804  138091  0.2  0.5 2561400 166404 ?      Sl   16:07   0:05 /usr/lib/firefox-esr/firefox-esr -contentproc -childID 6 -isForBrowser -prefsLen 31730 -prefMapSize 249223 -jsInitLen 234780 -parentBuildID 20241118130310 -greomni /usr/lib/firefox-esr/omni.ja -appomni /usr/lib/firefox-esr/browser/omni.ja -appDir /usr/lib/firefox-esr/browser {f0c82580-a185-4c0b-a032-4a622c3616ff} 137806 true tab
+21210804  138244  0.1  0.4 2513260 157896 ?      Sl   16:07   0:03 /usr/lib/firefox-esr/firefox-esr -contentproc -childID 8 -isForBrowser -prefsLen 31787 -prefMapSize 249223 -jsInitLen 234780 -parentBuildID 20241118130310 -greomni /usr/lib/firefox-esr/omni.ja -appomni /usr/lib/firefox-esr/browser/omni.ja -appDir /usr/lib/firefox-esr/browser {565555f7-eab0-49e6-97e2-10d6d9c6649c} 137806 true tab
+21210804  138317  0.0  0.1 379400 42536 ?        Sl   16:07   0:00 /usr/lib/firefox-esr/firefox-esr -contentproc -parentBuildID 20241118130310 -prefsLen 35042 -prefMapSize 249223 -appDir /usr/lib/firefox-esr/browser {1aabf6d7-350a-4ae8-89ed-80f56f066fe5} 137806 true rdd
+21210804  138340  0.0  0.0  32364 11340 ?        Sl   16:07   0:00 /usr/lib/speech-dispatcher-modules/sd_espeak-ng /etc/speech-dispatcher/modules/espeak-ng.conf
+21210804  138347  0.0  0.0 116148  8196 ?        Ssl  16:07   0:00 /usr/bin/speech-dispatcher --spawn --communication-method unix_socket --socket-path /users/Etu4/21210804/.cache/speech-dispatcher/speechd.sock
+21210804  138354  0.1  0.3 2474228 118348 ?      Sl   16:07   0:03 /usr/lib/firefox-esr/firefox-esr -contentproc -childID 9 -isForBrowser -prefsLen 31787 -prefMapSize 249223 -jsInitLen 234780 -parentBuildID 20241118130310 -greomni /usr/lib/firefox-esr/omni.ja -appomni /usr/lib/firefox-esr/browser/omni.ja -appDir /usr/lib/firefox-esr/browser {1360f9c1-9744-444e-9ff6-5675fa408312} 137806 true tab
+21210804  138573  0.1  0.4 2616580 157744 ?      Sl   16:08   0:03 /usr/lib/firefox-esr/firefox-esr -contentproc -childID 11 -isForBrowser -prefsLen 31787 -prefMapSize 249223 -jsInitLen 234780 -parentBuildID 20241118130310 -greomni /usr/lib/firefox-esr/omni.ja -appomni /usr/lib/firefox-esr/browser/omni.ja -appDir /usr/lib/firefox-esr/browser {8057b41d-4f7c-4cf1-bd87-1401dd08bdbf} 137806 true tab
+21210804  138729  0.0  0.3 2468952 107652 ?      Sl   16:08   0:01 /usr/lib/firefox-esr/firefox-esr -contentproc -childID 15 -isForBrowser -prefsLen 31787 -prefMapSize 249223 -jsInitLen 234780 -parentBuildID 20241118130310 -greomni /usr/lib/firefox-esr/omni.ja -appomni /usr/lib/firefox-esr/browser/omni.ja -appDir /usr/lib/firefox-esr/browser {b1ff5f7d-cadf-41c5-8af0-ceeb3bf7a96f} 137806 true tab
+21210804  138741  0.2  0.5 2519520 164272 ?      Sl   16:08   0:06 /usr/lib/firefox-esr/firefox-esr -contentproc -childID 16 -isForBrowser -prefsLen 31787 -prefMapSize 249223 -jsInitLen 234780 -parentBuildID 20241118130310 -greomni /usr/lib/firefox-esr/omni.ja -appomni /usr/lib/firefox-esr/browser/omni.ja -appDir /usr/lib/firefox-esr/browser {6025946f-abcc-404c-928a-45d31e13d709} 137806 true tab
+21210804  138810  0.0  0.0 312020 10796 ?        Sl   16:08   0:00 /usr/libexec/gvfsd-trash --spawner :1.10 /org/gtk/gvfs/exec_spaw/0
+21210804  138825  0.0  0.0 386068 11024 ?        Sl   16:08   0:00 /usr/libexec/gvfsd-network --spawner :1.10 /org/gtk/gvfs/exec_spaw/1
+21210804  138838  0.0  0.0 312980 12612 ?        Sl   16:08   0:00 /usr/libexec/gvfsd-dnssd --spawner :1.10 /org/gtk/gvfs/exec_spaw/3
+21210804  138952  0.1  0.8 2088640 265472 ?      Sl   16:09   0:03 /usr/lib/rstudio/bin/rstudio /users/Etu4/21210804/Téléchargements/opsci2024_tme1.md
+21210804  139035  0.3  0.4 2621980 146896 ?      Sl   16:09   0:07 /usr/lib/rstudio/bin/rsession --config-file none --program-mode desktop --www-port 29721 --launcher-token EA565318 --show-help-home 1
+21210804  139058  0.0  0.1 243716 35868 ?        S    16:09   0:00 /usr/lib/rstudio/libexec/QtWebEngineProcess --type=zygote --webengine-schemes=qrc:sLV --lang=fr
+21210804  139065  0.0  0.0 243716 10196 ?        S    16:09   0:00 /usr/lib/rstudio/libexec/QtWebEngineProcess --type=zygote --webengine-schemes=qrc:sLV --lang=fr
+21210804  139137  0.2  0.5 2549676 177416 ?      Sl   16:09   0:06 /usr/lib/firefox-esr/firefox-esr -contentproc -childID 18 -isForBrowser -prefsLen 31821 -prefMapSize 249223 -jsInitLen 234780 -parentBuildID 20241118130310 -greomni /usr/lib/firefox-esr/omni.ja -appomni /usr/lib/firefox-esr/browser/omni.ja -appDir /usr/lib/firefox-esr/browser {400218a2-cbe1-4206-b036-9793e41ef679} 137806 true tab
+21210804  139205  0.0  0.0 312008 11024 ?        Sl   16:09   0:00 /usr/libexec/gvfsd-recent --spawner :1.10 /org/gtk/gvfs/exec_spaw/4
+21210804  139228  0.0  0.2 1011176 92456 ?       Sl   16:09   0:01 /usr/bin/gnome-calendar --gapplication-service
+21210804  139561  4.5  0.4 905172 130592 ?       Sl   16:10   1:38 /usr/bin/gedit --gapplication-service
+21210804  143437  0.0  0.2 2419296 76352 ?       Sl   16:36   0:00 /usr/lib/firefox-esr/firefox-esr -contentproc -childID 19 -isForBrowser -prefsLen 31821 -prefMapSize 249223 -jsInitLen 234780 -parentBuildID 20241118130310 -greomni /usr/lib/firefox-esr/omni.ja -appomni /usr/lib/firefox-esr/browser/omni.ja -appDir /usr/lib/firefox-esr/browser {ffcab71a-9171-4c4d-839e-3ac1006acda0} 137806 true tab
+21210804  143510  0.0  0.2 2419296 78428 ?       Sl   16:36   0:00 /usr/lib/firefox-esr/firefox-esr -contentproc -childID 20 -isForBrowser -prefsLen 31821 -prefMapSize 249223 -jsInitLen 234780 -parentBuildID 20241118130310 -greomni /usr/lib/firefox-esr/omni.ja -appomni /usr/lib/firefox-esr/browser/omni.ja -appDir /usr/lib/firefox-esr/browser {6d6e3677-1848-481f-a820-ed91763a3deb} 137806 true tab
+21210804  143513  0.0  0.2 2419296 76276 ?       Sl   16:36   0:00 /usr/lib/firefox-esr/firefox-esr -contentproc -childID 21 -isForBrowser -prefsLen 31821 -prefMapSize 249223 -jsInitLen 234780 -parentBuildID 20241118130310 -greomni /usr/lib/firefox-esr/omni.ja -appomni /usr/lib/firefox-esr/browser/omni.ja -appDir /usr/lib/firefox-esr/browser {b57053df-36f3-41ef-af63-80b26f8e2159} 137806 true tab
+21210804  144166  5.6  0.5 1092636 163756 ?      Sl   16:41   0:13 /usr/bin/nautilus --gapplication-service
+21210804  144832  0.6  0.1 368436 56304 ?        Sl   16:45   0:00 /usr/libexec/gnome-control-center-search-provider
+21210804  144846  2.8  0.1 550532 57436 ?        Sl   16:45   0:00 /usr/libexec/gnome-terminal-server
+21210804  144952  0.0  0.0   7600  3976 pts/0    Ss   16:45   0:00 bash
+21210804  145013  0.0  0.0   2592  1008 pts/0    S    16:45   0:00 sh
+21210804  145052  200  0.0   9404  4552 pts/0    R+   16:45   0:00 ps -aux
+21210804  145053  0.0  0.0   6372  2160 pts/0    S+   16:45   0:00 grep 21210804
+
+`sleep 1664 &`
+ps
+    PID TTY          TIME CMD
+ 144952 pts/0    00:00:00 bash
+ 145013 pts/0    00:00:00 sh
+ 145184 pts/0    00:00:00 sleep
+ 145340 pts/0    00:00:00 ps
+ 
+kill -9 145184	on a tué le sleep
+$ ps
+    PID TTY          TIME CMD
+ 144952 pts/0    00:00:00 bash
+ 145013 pts/0    00:00:00 sh
+ 145360 pts/0    00:00:00 ps
+[1] + Killed                     sleep 1664
+
+Exercice 8 : 
+ip addr : 127.0.0.1/8 localhost
+ADRESSE PUBLIQUE : 132.227.114.241/27
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: enp0s31f6: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 90:8d:6e:5d:50:e0 brd ff:ff:ff:ff:ff:ff
+    inet 132.227.114.241/27 brd 132.227.114.255 scope global dynamic enp0s31f6
+       valid_lft 6222sec preferred_lft 5322sec
+    inet6 fe80::928d:6eff:fe5d:50e0/64 scope link 
+       valid_lft forever preferred_lft forever
+3: enp0s31f6.2170@enp0s31f6: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 90:8d:6e:5d:50:e0 brd ff:ff:ff:ff:ff:ff
+    inet 10.17.0.17/24 brd 10.17.0.255 scope global enp0s31f6.2170
+       valid_lft forever preferred_lft forever
+    inet6 fe80::928d:6eff:fe5d:50e0/64 scope link 
+       valid_lft forever preferred_lft forever
+       
+crontab : 
+0 16 * * 3 ~/system-report/report.sh
+
